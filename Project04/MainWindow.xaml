@@ -1,0 +1,49 @@
+﻿<Window x:Class="Project04.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:Project04"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="900" ResizeMode="NoResize">
+    <Grid>
+        <DataGrid x:Name="DGridTransportAgency" d:ItemsSource="{d:SampleData ItemCount=5}" AutoGenerateColumns="False" Margin="10,0,10,217" SelectionChanged="DGridTransportAgency_SelectionChanged">
+            <DataGrid.Columns>
+                <DataGridTextColumn Header="Вид" Binding="{Binding type}" Width="100"></DataGridTextColumn>
+                <DataGridTextColumn Header="Время отправления" Binding="{Binding departureTime}" Width="130"></DataGridTextColumn>
+                <DataGridTextColumn Header="Время прибытия" Binding="{Binding arrivalTime}" Width="130"></DataGridTextColumn>
+                <DataGridTextColumn Header="Пункт назначения" Binding="{Binding destination}" Width="120"></DataGridTextColumn>
+                <DataGridTextColumn Header="Расстояние" Binding="{Binding distance}" Width="75"></DataGridTextColumn>
+                <DataGridTextColumn Header="Мест" Binding="{Binding seats}" Width="50"></DataGridTextColumn>
+                <DataGridTextColumn Header="Продано билетов" Binding="{Binding ticketsSold}" Width="110"></DataGridTextColumn>
+                <DataGridTextColumn Header="Стоимость, ₽" Binding="{Binding cost}" Width="85"></DataGridTextColumn>
+                <DataGridTemplateColumn Width="50">
+                    <DataGridTemplateColumn.CellTemplate>
+                        <DataTemplate>
+                            <Button x:Name="btBuyTicket" Content="Купить" Click="btBuyTicket_Click"></Button>
+                        </DataTemplate>
+                    </DataGridTemplateColumn.CellTemplate>
+                </DataGridTemplateColumn>
+            </DataGrid.Columns>
+        </DataGrid>
+        <Button x:Name="btCheckRecomendation"  Content="Узнать рекомендации" HorizontalAlignment="Left" Height="28" Margin="89,239,0,0" VerticalAlignment="Top" Width="134" Click="btCheckRecomendation_Click"/>
+        <TextBox x:Name="tbToRecomendation" HorizontalAlignment="Left" Height="28" Margin="10,239,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="74">
+            <UIElement.RenderTransform>
+                <TransformGroup>
+                    <ScaleTransform/>
+                    <SkewTransform/>
+                    <RotateTransform/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </UIElement.RenderTransform>
+        </TextBox>
+        <Label Content="Введите расстояние в километрах" HorizontalAlignment="Left" Height="24" Margin="10,220,0,0" VerticalAlignment="Top" Width="167" FontSize="10"/>
+        <Label Content="Рекомендация:" HorizontalAlignment="Left" Height="24" Margin="10,272,0,0" VerticalAlignment="Top" Width="93"/>
+        <Label x:Name="lbRecomedation" Content="-" HorizontalAlignment="Left" Height="24" Margin="108,272,0,0" VerticalAlignment="Top" Width="78"/>
+        <Label Content="Хит:" HorizontalAlignment="Left" Height="24" Margin="6,334,0,0" VerticalAlignment="Top" Width="36"/>
+        <Label x:Name="lbHit" Content="-" HorizontalAlignment="Left" Height="24" Margin="42,334,0,0" VerticalAlignment="Top" Width="105"/>
+        <Label x:Name="lbTest" Content="Label" HorizontalAlignment="Left" Height="74" Margin="356,272,0,0" VerticalAlignment="Top" Width="534" FontSize="25"/>
+
+
+    </Grid>
+</Window>
