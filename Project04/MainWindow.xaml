@@ -42,7 +42,6 @@
         <Label x:Name="lbRecomedation" Content="-" HorizontalAlignment="Left" Height="24" Margin="108,272,0,0" VerticalAlignment="Top" Width="78"/>
         <Label Content="Хит:" HorizontalAlignment="Left" Height="24" Margin="6,334,0,0" VerticalAlignment="Top" Width="36"/>
         <Label x:Name="lbHit" Content="-" HorizontalAlignment="Left" Height="24" Margin="42,334,0,0" VerticalAlignment="Top" Width="105"/>
-        <Label x:Name="lbTest" Content="Label" HorizontalAlignment="Left" Height="74" Margin="356,272,0,0" VerticalAlignment="Top" Width="534" FontSize="25"/>
 
 
     </Grid>
